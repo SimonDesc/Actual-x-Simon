@@ -16,7 +16,7 @@
 
 ## Diagramme Relationnel 🛠️
 
-![diagram](./diagram_relationnel.png)
+![diagram](./docs/diagram_relationnel.png)
 
 ## Installation
 
@@ -54,9 +54,9 @@ symfony server:start
 ```
 
 6 . Pour les besoin de la démo, vous pouvez utiliser le script suivant pour alimenter la BDD
-![insert](./INSERT.SQL)
+![insert](./docs/INSERT.SQL)
 pour reset :
-![delete](./DELETE.SQL)
+![delete](./docs/DELETE.SQL)
 
 ## Détail du test technique
 
