@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+
+{% block header_title %}
+    Bienvenue sur la page Admin
+{% endblock %}
+
+{% block content %}
+  <div class="container mx-auto p-4">
+
+    <div class="bg-white shadow-md rounded-lg p-6 mb-6">
+      <h3 class="block w-full text-3xl font-semibold  my-8 p-3 border border-red-600 rounded-lg">Cours Disponibles</h3>
+
+      <div class="max-h-96 overflow-y-auto">
+        <ul class="space-y-4">
+          {% for chapter in chapters %}
+            <li class="border-b pb-2">
+              <span class="font-medium">{{ chapter.title }}</span>
+              <ul class="pl-4 mt-2 space-y-2">
+                {% for module in chapter.module %}
+                  <li class="flex items-center space-x-2" data-id="{{ module.id }}">
+                    <input type="text" class="module-title border rounded px-2 py-1 w-80" data-id="{{ module.id }}" value="{{ module.title }}" readonly />
+                    <i class="fas fa-edit edit-icon text-gray-500 cursor-pointer" data-id="{{ module.id }}"></i>
+                    <i class="fas fa-trash delete-icon text-gray-500 cursor-pointer" data-id="{{ module.id }}"></i>
+                  </li>
+                {% endfor %}
+              </ul>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+	<div class="bg-white shadow-md rounded-lg p-6">
+        <h3 class="block w-full text-3xl font-semibold  my-8 p-3 border border-red-600 rounded-lg">Managers</h3>
+        <ul class="space-y-2">
+            {% for managerStatus in managersWithStatus %}
+                <li class="pl-4 flex items-center justify-between border-b pb-2 w-80">
+                    <span>{{ managerStatus.manager.name }}</span>
+                    <span class="{% if managerStatus.hasStudents %}text-green-500{% else %}text-red-500{% endif %}" >{% if managerStatus.hasStudents %}<i class="fa-sharp fa-solid fa-check"></i> Avec{% else %}<i class="fa-sharp fa-solid fa-xmark"></i> Sans{% endif %} etudiant</span>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+  </div>
+{% endblock %}
+
+{% block javascripts %}
+  {{ parent() }}
+  <script type="module" src="{{ asset('js/admin/main.js') }}"></script>
+{% endblock %}

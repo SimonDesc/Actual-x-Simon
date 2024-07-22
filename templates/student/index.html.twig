@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+
+{% block header_title %}
+  Bienvenue sur la page Student
+{% endblock %}
+
+{% block content %}
+  <div class="container mx-auto p-4">
+    <div class="bg-white shadow-md rounded-lg p-6 mb-6">
+      <div class="mb-4">
+        <label for="student-select" class="block w-full text-3xl font-semibold my-8 p-3 border border-red-600 rounded-lg">Sélectionner un étudiant</label>
+        <select id="student-select" class="mt-5 block w-96 pl-3 pr-10 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+          {% for student in students %}
+            <option value="{{ student.id }}" data-username="{{ student.username }}" data-firstname="{{ student.firstname }}" data-lastname="{{ student.lastname }}" data-email="{{ student.email }}" data-phone-number="{{ student.phoneNumber }}" data-manager="{{ student.manager }}" data-nummodules="{{ student.numModules }}" data-numchapters="{{ student.numChapters }}">{{ student.firstname }} {{ student.lastname }}</option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <div id="student-info" class="mb-6 p-4 bg-gray-100 rounded-lg">
+        <p>
+          Username: <span id="student-username" class="font-semibold"></span>
+        </p>
+        <p>
+          First Name: <span id="student-firstname" class="font-semibold"></span>
+        </p>
+        <p>
+          Last Name: <span id="student-lastname" class="font-semibold"></span>
+        </p>
+        <p>
+          Email: <span id="student-email" class="font-semibold"></span>
+        </p>
+        <p>
+          Phone Number: <span id="student-phone-number" class="font-semibold"></span>
+        </p>
+        <p>
+          Manager: <span id="student-manager" class="font-semibold"></span>
+        </p>
+      </div>
+
+	    </div>
+  </div> 
+  
+  <div class="container mx-auto p-4">
+    <div class="bg-white shadow-md rounded-lg p-6 mb-6">
+
+      <h3 class="block w-full text-3xl font-semibold my-8 p-3 border border-red-600 rounded-lg">Chapitres et Modules</h3>
+
+      <ul id="chapter-and-module-list" class="space-y-4">
+        {% for chapter_title, modules in chapters %}
+          <li data-chapter-title="{{ chapter_title }}" class="border-b pb-2">
+            <strong>{{ chapter_title }}</strong>
+            <ul class="pl-4 mt-2 space-y-2">
+              {% for studentmodule in modules %}
+                <li data-student-id="{{ studentmodule.student.id }}" class="flex items-center w-96 p-2 border-b border-gray-200">
+                  {{ studentmodule.module.title }}
+                  <i class="fa-regular fa-heart add-favorite-to-student text-red-500 cursor-pointer ml-5" data-id="{{ studentmodule.module.id }}"></i>
+                </li>
+              {% endfor %}
+            </ul>
+          </li>
+        {% endfor %}
+      </ul>
+      <p class="mt-6">
+        Module : <span id="student-nummodules" class="font-semibold"></span> | Chapitre : <span id="student-numchapters" class="font-semibold"></span>
+      </p>
+
+	</div>
+  </div>
+  <div class="container mx-auto p-4">
+    <div class="bg-white shadow-md rounded-lg p-6 mb-6">
+      <h3 class="block w-full text-3xl font-semibold my-8 p-3 border border-red-600 rounded-lg">Favoris de l'étudiant</h3>
+      <ul id="favorite-list" class="list-disc pl-5 space-y-2"></ul>
+    </div>
+  </div>
+  </div>
+  </div>
+{% endblock %}
+
+{% block javascripts %}
+  {{ parent() }}
+  <script type="module" src="{{ asset('js/student/main.js') }}"></script>
+{% endblock %}
