@@ -54,10 +54,10 @@ symfony server:start
 ```
 
 6 . Pour les besoin de la démo, vous pouvez utiliser le script suivant pour alimenter la BDD
-![insert](./docs/INSERT.SQL)
-pour reset :
-![delete](./docs/DELETE.SQL)
+- [Script pour alimenter la BDD (INSERT.SQL)](./docs/INSERT.SQL)
+- [Script pour réinitialiser la BDD (DELETE.SQL)](./docs/DELETE.SQL)
 
+  
 ## Détail du test technique
 
 Le test devra être livré via un repository Github, Gitlab ou Bitbucket
