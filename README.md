@@ -1,10 +1,64 @@
 # Actual Groupe x Simon
 
-# Base de données :
-https://drawsql.app/teams/simon-37/diagrams/actual
-
-
 ## Introduction
+
+ 👨🏻‍💻 Il s'agit d'un projet de test technique pour ma candidature au poste de développeur Web Full Stack pour le Groupe Actual.
+
+---
+
+## Présentation 🎆
+
+### Présentation 👀
+
+![Demo1](./docs/page_admin.gif)
+![Demo2](./docs/page_manager.gif)
+![Demo3](./docs/page_student.gif)
+
+## Diagramme Relationnel 🛠️
+
+![diagram](./diagram_relationnel.png)
+
+## Installation
+
+### Pré-Requis
+
+Composer
+
+### Etapes d'installation
+
+1 . Installer les dépendances
+
+```shell
+composer install
+```
+
+2 . Créer une BDD MySQL
+
+3 . Créer/configurer le .env
+
+Exemple
+```
+DATABASE_URL="mysql://admin:xxxx@127.0.0.1:3308/actual?serverVersion=8.3.0"
+```
+
+4 . Lancer les migrations
+
+```shell
+php bin/console doctrine:migrations:migrate
+```
+
+5 . Lancer le serveur
+
+```shell
+symfony server:start
+```
+
+6 . Pour les besoin de la démo, vous pouvez utiliser le script suivant pour alimenter la BDD
+![insert](./INSERT.SQL)
+pour reset :
+![delete](./DELETE.SQL)
+
+## Détail du test technique
 
 Le test devra être livré via un repository Github, Gitlab ou Bitbucket
 privé.
