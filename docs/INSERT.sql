@@ -106,26 +106,3 @@ VALUES
 ((SELECT id FROM module WHERE title = 'Variables et Types de Données'), (SELECT id FROM student WHERE username = 'ijones')),
 ((SELECT id FROM module WHERE title = 'Structures de Contrôle'), (SELECT id FROM student WHERE username = 'ijones')),
 ((SELECT id FROM module WHERE title = 'Fonctions et Modules'), (SELECT id FROM student WHERE username = 'ijones'));
-
--- Insertion des modules favoris pour certains étudiants
-INSERT INTO `favorite` (`module_id`, `student_id`)
-VALUES
-((SELECT id FROM module WHERE title = 'Variables et Types de Données'), (SELECT id FROM student WHERE username = 'jdoe')),
-((SELECT id FROM module WHERE title = 'Fonctions et Modules'), (SELECT id FROM student WHERE username = 'jdoe')),
-((SELECT id FROM module WHERE title = 'SQL Avancé'), (SELECT id FROM student WHERE username = 'jdoe')),
-
-((SELECT id FROM module WHERE title = 'Indexation et Optimisation'), (SELECT id FROM student WHERE username = 'asmith')),
-((SELECT id FROM module WHERE title = 'JavaScript'), (SELECT id FROM student WHERE username = 'asmith')),
-((SELECT id FROM module WHERE title = 'Backend avec Node.js'), (SELECT id FROM student WHERE username = 'asmith')),
-
-((SELECT id FROM module WHERE title = 'Introduction au Machine Learning'), (SELECT id FROM student WHERE username = 'bwilliams')),
-((SELECT id FROM module WHERE title = 'Apprentissage Profond'), (SELECT id FROM student WHERE username = 'bwilliams')),
-((SELECT id FROM module WHERE title = 'Vision par Ordinateur'), (SELECT id FROM student WHERE username = 'bwilliams')),
-
-((SELECT id FROM module WHERE title = 'Fonctions et Modules'), (SELECT id FROM student WHERE username = 'cmiller')),
-((SELECT id FROM module WHERE title = 'SQL Avancé'), (SELECT id FROM student WHERE username = 'cmiller')),
-((SELECT id FROM module WHERE title = 'HTML et CSS'), (SELECT id FROM student WHERE username = 'cmiller')),
-
-((SELECT id FROM module WHERE title = 'Traitement du Langage Naturel'), (SELECT id FROM student WHERE username = 'djohnson')),
-((SELECT id FROM module WHERE title = 'Vision par Ordinateur'), (SELECT id FROM student WHERE username = 'djohnson')),
-((SELECT id FROM module WHERE title = 'Algorithmes Génétiques'), (SELECT id FROM student WHERE username = 'djohnson'));
