@@ -65,6 +65,11 @@ http://127.0.0.1:8000/manager
 
 http://127.0.0.1:8000/student
 
+
+
+### Exemple de use case de test fonctionnel
+
+- [Use case fonctionnel](https://github.com/SimonDesc/Actual-x-Simon/blob/main/docs/Example_use_case_fonctionnel.xlsx)
   
 ## Détail du test technique
 
