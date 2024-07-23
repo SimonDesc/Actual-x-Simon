@@ -4,6 +4,9 @@
 
  👨🏻‍💻 Il s'agit d'un projet de test technique pour ma candidature au poste de développeur Web Full Stack pour le Groupe Actual.
 
+disclaimer :
+Étant donné que les spécifications pour le front-end n'étaient pas clairement définies et que l'offre d'emploi s'adressait à un développeur full stack, j'ai pris l'initiative de créer une interface utilisateur dynamique en utilisant la bibliothèque JQuery. Par ailleurs, j'ai intégré API Platform pour gérer les endpoints API RESTful.
+
 ---
 
 ## Présentation 🎆
@@ -70,7 +73,11 @@ http://127.0.0.1:8000/student
 ### Exemple de use case de test fonctionnel
 
 - [Use case fonctionnel](https://github.com/SimonDesc/Actual-x-Simon/blob/main/docs/Example_use_case_fonctionnel.xlsx)
-  
+
+
+---
+---
+
 ## Détail du test technique
 
 Le test devra être livré via un repository Github, Gitlab ou Bitbucket
