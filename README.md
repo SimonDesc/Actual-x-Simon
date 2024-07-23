@@ -57,10 +57,14 @@ symfony server:start
 - [Script pour alimenter la BDD (INSERT.SQL)](https://github.com/SimonDesc/Actual-x-Simon/blob/main/docs/INSERT.sql)
 - [Script pour réinitialiser la BDD (DELETE.SQL)](https://github.com/SimonDesc/Actual-x-Simon/blob/main/docs/DELETE.sql)
 
->> accèder aux différentes pages du site via :
+#### Accèder aux différentes pages du site via
+
 http://127.0.0.1:8000/admin
+
 http://127.0.0.1:8000/manager
+
 http://127.0.0.1:8000/student
+
   
 ## Détail du test technique
 
